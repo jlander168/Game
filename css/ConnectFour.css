@@ -1,0 +1,822 @@
+@font-face{
+    font-family: 'Bold';
+    src: url(fonts/Montserrat.ttf);
+}
+@font-face {
+    font-family: 'Asap';
+    src: url(fonts/Asap-Regular.ttf)
+}
+*{
+    margin: 0
+}
+
+html{
+    background-color: #24272E;
+    font-family: 'Asap';
+}
+
+@media only screen and (min-width: 400px) and (max-width:992px) and (orientation: portrait) {
+    .button{
+        text-align: center;
+        position: absolute;
+        right: 185px;
+        top: 80px;
+    }
+    .button button {
+        border-radius: 4px;
+        bordeR: none;
+        font-family: 'Asap';
+    }
+    #restart{
+        font-size: 140%;
+    }
+    .h1 {
+        width: 100%;
+        background-color: white;
+        margin: 0 0 10px
+    }
+    h1{
+        text-align: center;
+        font-size: 250%;
+        margin: 0;
+        color: black
+    }
+    .scoreboard {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        color: white;
+        font-size: 250%;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 4px;
+        margin: 10px auto 0;
+        width: 200px;
+        padding: 15px 20px;
+    }
+    .mainsection {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #player {
+        font-size: 250%;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        color: white
+    }
+
+    #dropdown {
+        display: table;
+        width: 40em;
+        height: 6em;
+        visibility: hidden;
+    }
+    #game_table{
+        display: table;
+        width: 28.5em;
+        height: 24em;
+        background-color: blue;
+    }
+    #dropdown td{
+        background-color: white;
+        border-radius: 50%;
+    }
+    #game_table td {
+        border-radius: 50%;
+        border: 4px solid blue;
+    }
+
+    .player0{
+        background-color: white;
+        border-radius: 50%;
+        border: 0 solid white;
+    }
+
+    td.player0:hover {
+        background-color: rgba(137, 206, 230, 0.808);
+    }
+    .player1 {
+        background-color: red;
+    }
+    #player1 {
+        color: red
+    }
+    .player2 {
+        background-color: yellow;
+    }
+    #player2 {
+        color: yellow
+    }
+
+    td:hover::after, 
+    col:hover::after{
+        height: 1000px;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+
+    }
+    .dropdown {
+        visibility: visible;
+    }
+
+    .yellowdude {
+        width: 100%;
+    }
+    .reddude {
+        width: 100%;
+    }
+
+    #gameboard:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #winnergifYellow {
+        position: absolute;
+        top: 12%;
+        left: -2%;
+        width: 180px;
+    }
+    #winnergifRed {
+        position: absolute;
+        top: 12%;
+        right: -1%;
+        width: 170px;
+    }
+    /* Animation 2x */
+    .yellowwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    .redwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes hop {
+        0%   {bottom:0px;}
+        10%  {bottom:10px;}
+        20%  {bottom:10px;}
+        30%  {bottom:0px;}
+        40%  {bottom:10px;}
+        50%  {bottom:10px;}
+        60%  {bottom:0px;}
+        70%  {bottom:10px;}
+        80%  {bottom:10px;}
+        90%  {bottom:0px;}
+        100% {bottom:0px;}
+    }
+}
+@media only screen and (min-width: 400px) and (max-width:992px) and (orientation: landscape) {
+    .button{
+        text-align: center;
+        position: absolute;
+        right: 185px;
+        top: 80px;
+    }
+    .button button {
+        border-radius: 4px;
+        bordeR: none;
+        font-family: 'Asap';
+    }
+    #restart{
+        font-size: 140%;
+    }
+    .h1 {
+        width: 100%;
+        background-color: white;
+        margin: 0 0 10px
+    }
+    h1{
+        text-align: center;
+        font-size: 250%;
+        margin: 0;
+        color: black
+    }
+    .scoreboard {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        color: white;
+        font-size: 250%;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 4px;
+        margin: 10px auto 0;
+        width: 200px;
+        padding: 15px 20px;
+    }
+    .mainsection {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #player {
+        font-size: 250%;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        color: white
+    }
+
+    #dropdown {
+        display: table;
+        width: 40em;
+        height: 6em;
+        visibility: hidden;
+    }
+    #game_table{
+        display: table;
+        width: 28.5em;
+        height: 24em;
+        background-color: blue;
+    }
+    #dropdown td{
+        background-color: white;
+        border-radius: 50%;
+    }
+    #game_table td {
+        border-radius: 50%;
+        border: 4px solid blue;
+    }
+
+    .player0{
+        background-color: white;
+        border-radius: 50%;
+        border: 0 solid white;
+    }
+
+    td.player0:hover {
+        background-color: rgba(137, 206, 230, 0.808);
+    }
+    .player1 {
+        background-color: red;
+    }
+    #player1 {
+        color: red
+    }
+    .player2 {
+        background-color: yellow;
+    }
+    #player2 {
+        color: yellow
+    }
+
+    td:hover::after, 
+    col:hover::after{
+        height: 1000px;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+
+    }
+    .dropdown {
+        visibility: visible;
+    }
+
+    .yellowdude {
+        width: 100%;
+    }
+    .reddude {
+        width: 100%;
+    }
+
+    #gameboard:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #winnergifYellow {
+        position: absolute;
+        top: 12%;
+        left: -2%;
+        width: 180px;
+    }
+    #winnergifRed {
+        position: absolute;
+        top: 12%;
+        right: -1%;
+        width: 170px;
+    }
+    /* Animation 2x */
+    .yellowwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    .redwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes hop {
+        0%   {bottom:0px;}
+        10%  {bottom:10px;}
+        20%  {bottom:10px;}
+        30%  {bottom:0px;}
+        40%  {bottom:10px;}
+        50%  {bottom:10px;}
+        60%  {bottom:0px;}
+        70%  {bottom:10px;}
+        80%  {bottom:10px;}
+        90%  {bottom:0px;}
+        100% {bottom:0px;}
+    }
+}
+@media only screen and (min-width:601px) and (max-width:1024px) and (orientation:portrait){
+    .button{
+        text-align: center;
+        position: absolute;
+        right: 185px;
+        top: 80px;
+    }
+    .button button {
+        border-radius: 4px;
+        bordeR: none;
+        font-family: 'Asap';
+    }
+    #restart{
+        font-size: 140%;
+    }
+    .h1 {
+        width: 100%;
+        background-color: white;
+        margin: 0 0 10px
+    }
+    h1{
+        text-align: center;
+        font-size: 250%;
+        margin: 0;
+        color: black
+    }
+    .scoreboard {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        color: white;
+        font-size: 250%;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 4px;
+        margin: 10px auto 0;
+        width: 200px;
+        padding: 15px 20px;
+    }
+    .mainsection {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #player {
+        font-size: 250%;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        color: white
+    }
+
+    #dropdown {
+        display: table;
+        width: 40em;
+        height: 6em;
+        visibility: hidden;
+    }
+    #game_table{
+        display: table;
+        width: 28.5em;
+        height: 24em;
+        background-color: blue;
+    }
+    #dropdown td{
+        background-color: white;
+        border-radius: 50%;
+    }
+    #game_table td {
+        border-radius: 50%;
+        border: 4px solid blue;
+    }
+
+    .player0{
+        background-color: white;
+        border-radius: 50%;
+        border: 0 solid white;
+    }
+
+    td.player0:hover {
+        background-color: rgba(137, 206, 230, 0.808);
+    }
+    .player1 {
+        background-color: red;
+    }
+    #player1 {
+        color: red
+    }
+    .player2 {
+        background-color: yellow;
+    }
+    #player2 {
+        color: yellow
+    }
+
+    td:hover::after, 
+    col:hover::after{
+        height: 1000px;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+
+    }
+    .dropdown {
+        visibility: visible;
+    }
+
+    .yellowdude {
+        width: 100%;
+    }
+    .reddude {
+        width: 100%;
+    }
+
+    #gameboard:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #winnergifYellow {
+        position: absolute;
+        top: 12%;
+        left: -2%;
+        width: 180px;
+    }
+    #winnergifRed {
+        position: absolute;
+        top: 12%;
+        right: -1%;
+        width: 170px;
+    }
+    /* Animation 2x */
+    .yellowwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    .redwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes hop {
+        0%   {bottom:0px;}
+        10%  {bottom:10px;}
+        20%  {bottom:10px;}
+        30%  {bottom:0px;}
+        40%  {bottom:10px;}
+        50%  {bottom:10px;}
+        60%  {bottom:0px;}
+        70%  {bottom:10px;}
+        80%  {bottom:10px;}
+        90%  {bottom:0px;}
+        100% {bottom:0px;}
+    }
+}
+@media only screen and (min-width:601px) and (max-width:1024px) and (orientation:landscape){
+    .button{
+        text-align: center;
+        position: absolute;
+        right: 185px;
+        top: 80px;
+    }
+    .button button {
+        border-radius: 4px;
+        bordeR: none;
+        font-family: 'Asap';
+    }
+    #restart{
+        font-size: 140%;
+    }
+    .h1 {
+        width: 100%;
+        background-color: white;
+        margin: 0 0 10px
+    }
+    h1{
+        text-align: center;
+        font-size: 250%;
+        margin: 0;
+        color: black
+    }
+    .scoreboard {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        color: white;
+        font-size: 250%;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 4px;
+        margin: 10px auto 0;
+        width: 200px;
+        padding: 15px 20px;
+    }
+    .mainsection {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #player {
+        font-size: 250%;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        color: white
+    }
+
+    #dropdown {
+        display: table;
+        width: 40em;
+        height: 6em;
+        visibility: hidden;
+    }
+    #game_table{
+        display: table;
+        width: 28.5em;
+        height: 24em;
+        background-color: blue;
+    }
+    #dropdown td{
+        background-color: white;
+        border-radius: 50%;
+    }
+    #game_table td {
+        border-radius: 50%;
+        border: 4px solid blue;
+    }
+
+    .player0{
+        background-color: white;
+        border-radius: 50%;
+        border: 0 solid white;
+    }
+
+    td.player0:hover {
+        background-color: rgba(137, 206, 230, 0.808);
+    }
+    .player1 {
+        background-color: red;
+    }
+    #player1 {
+        color: red
+    }
+    .player2 {
+        background-color: yellow;
+    }
+    #player2 {
+        color: yellow
+    }
+
+    td:hover::after, 
+    col:hover::after{
+        height: 1000px;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+
+    }
+    .dropdown {
+        visibility: visible;
+    }
+
+    .yellowdude {
+        width: 100%;
+    }
+    .reddude {
+        width: 100%;
+    }
+
+    #gameboard:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #winnergifYellow {
+        position: absolute;
+        top: 12%;
+        left: -2%;
+        width: 180px;
+    }
+    #winnergifRed {
+        position: absolute;
+        top: 12%;
+        right: -1%;
+        width: 170px;
+    }
+    /* Animation 2x */
+    .yellowwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    .redwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes hop {
+        0%   {bottom:0px;}
+        10%  {bottom:10px;}
+        20%  {bottom:10px;}
+        30%  {bottom:0px;}
+        40%  {bottom:10px;}
+        50%  {bottom:10px;}
+        60%  {bottom:0px;}
+        70%  {bottom:10px;}
+        80%  {bottom:10px;}
+        90%  {bottom:0px;}
+        100% {bottom:0px;}
+    }
+}
+@media only screen and (min-width:1025px){
+    .button{
+        text-align: center;
+        position: absolute;
+        right: 455px;
+        top: 100px;
+    }
+    .button button {
+        border-radius: 4px;
+        bordeR: none;
+        font-family: 'Asap';
+    }
+    #restart{
+        font-size: 200%;
+    }
+    .h1 {
+        width: 100%;
+        background-color: white;
+        margin: 0 0 10px
+    }
+    h1{
+        text-align: center;
+        font-size: 350%;
+        margin: 0;
+        color: black
+    }
+    .scoreboard {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        color: white;
+        font-size: 250%;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 4px;
+        margin: 10px auto 0;
+        width: 200px;
+        padding: 15px 20px;
+    }
+    .mainsection {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #player {
+        font-size: 250%;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        color: white
+    }
+
+    #dropdown {
+        display: table;
+        width: 40em;
+        height: 6em;
+        visibility: hidden;
+    }
+    #game_table{
+        display: table;
+        width: 37.5em;
+        height: 32em;
+        background-color: blue;
+    }
+    #dropdown td{
+        background-color: white;
+        border-radius: 50%;
+    }
+    #game_table td {
+        border-radius: 50%;
+        border: 4px solid blue;
+    }
+
+    .player0{
+        background-color: white;
+        border-radius: 50%;
+        border: 0 solid white;
+    }
+
+    td.player0:hover {
+        background-color: rgba(137, 206, 230, 0.808);
+    }
+    .player1 {
+        background-color: red;
+    }
+    #player1 {
+        color: red
+    }
+    .player2 {
+        background-color: yellow;
+    }
+    #player2 {
+        color: yellow
+    }
+
+    td:hover::after, 
+    col:hover::after{
+        height: 1000px;
+        left: 0;
+        z-index: -1;
+        position: absolute;
+
+    }
+    .dropdown {
+        visibility: visible;
+    }
+
+    .yellowdude {
+        width: 100%;
+    }
+    .reddude {
+        width: 100%;
+    }
+
+    #gameboard:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #winnergifYellow {
+        position: absolute;
+        top: 10%;
+        left: 6%;
+        width: 192px;
+    }
+    #winnergifRed {
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        width: 192px;
+    }
+    /* Animation 2x */
+    .yellowwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    .redwinner {
+        position: relative;
+        animation-name: hop;
+        animation-duration: 1.2s;
+        animation-iteration-count:infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes hop {
+        0%   {bottom:0px;}
+        10%  {bottom:10px;}
+        20%  {bottom:10px;}
+        30%  {bottom:0px;}
+        40%  {bottom:10px;}
+        50%  {bottom:10px;}
+        60%  {bottom:0px;}
+        70%  {bottom:10px;}
+        80%  {bottom:10px;}
+        90%  {bottom:0px;}
+        100% {bottom:0px;}
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/ConnectFour.css">
+        <script src="ConnectFour.js"></script>
+    </head>
+<body onload="startGame()">
+    <header class="h1">
+        <h1> Connect Four</h1>
+    </header>
+    <div class="scoreboard">
+        <img src="pics/yellowdude.png" id="yellowdudesmall" width="25%"><span id="yellowPlayer">0</span>:<span id="redPlayer">0</span><img src="pics/redude2.png" id="reddudesmall" width="25%">
+    </div>
+    <div class="button">
+        <button id="restart" onclick="startGame()">New game</button>
+    </div>
+    <div id="player"></div>
+    <div class="mainsection">
+        <div id="yellowwinner">
+            <img class="yellowdude"src="pics/yellowdude.png">
+        </div>
+        <div id="gameboard">
+            <table id="game_table">
+    
+                <script>
+                    for (var row=0; row<=5; row++) {
+                            document.writeln("<tr>");	
+                            for (var col=0; col<=6; col++) {
+                                document.writeln("<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")' onmouseover='hoverOver("+col+")'</td>");							
+                            }
+                            document.writeln("</tr>");
+                        }
+                </script>
+            </table>
+        </div>
+        <div id="redwinner">
+            <img class="reddude" src="pics/redude2.png">
+        </div>
+        <div id="winnergifYellow"></div>
+        <div id="winnergifRed"></div>
+    </div>
+</body>
+</html>
+        
